@@ -3,27 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NFT Marketplace</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Aptos NFT Marketplace</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>NFT Marketplace</h1>
+    <div class="header">
+        <h1 class="title">Aptos NFT Marketplace</h1>
+        <div id="accountStatus">
             <button id="connectWallet">Connect Wallet</button>
-        </header>
-        <main>
-            <section id="nft-list">
-                <h2>Available NFTs</h2>
-                <div class="nft-grid" id="nftGrid"></div>
-            </section>
-            <section id="nft-details" class="hidden">
-                <h2>NFT Details</h2>
-                <div id="nftInfo"></div>
-                <button id="buyNft">Buy NFT</button>
-            </section>
-        </main>
+        </div>
     </div>
-    <script src="script.js"></script>
+
+    <div class="marketplace">
+        <h2>Available NFTs</h2>
+        <div id="nftList" class="nft-container">
+            <!-- NFTs will be displayed here -->
+        </div>
+    </div>
+
+    <div class="mint-section">
+        <h2>Mint Your NFT</h2>
+        <form id="mintForm">
+            <input type="text" id="nftName" placeholder="NFT Name" required>
+            <input type="text" id="nftDescription" placeholder="NFT Description" required>
+            <input type="file" id="nftImage" required>
+            <button type="submit">Mint NFT</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@aptos-labs/aptos@1.0.0/dist/aptos.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
